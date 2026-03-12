@@ -5,7 +5,7 @@
 %define oname tibs
 
 Name:		python-tibs
-Version:	0.5.6
+Version:	0.5.7
 Release:	1
 Summary:	A sleek Python library for binary data.
 License:	MIT
