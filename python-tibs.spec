@@ -1,18 +1,16 @@
 # Rust sucks
 %undefine _debugsource_template
-
 %define module tibs
-%define oname tibs
 
 Name:		python-tibs
-Version:	0.5.7
+Version:	0.6.0
 Release:	1
-Summary:	A sleek Python library for binary data.
+Summary:	A sleek Python library for binary data
 License:	MIT
 Group:		Development/Python
 URL:		https://github.com/scott-griffiths/tibs
-Source0:	https://github.com/scott-griffiths/tibs/archive/v%{version}/%{oname}-%{version}.tar.gz
-Source1:	%{oname}-%{version}-vendor.tar.xz
+Source0:	https://github.com/scott-griffiths/tibs/archive/v%{version}/%{name}-%{version}.tar.gz
+Source1:	%{name}-%{version}-vendor.tar.xz
 
 BuildSystem:	python
 BuildRequires:	cargo
@@ -42,7 +40,12 @@ EOF
 # links properly during compile to fix undefined symbols being reported
 # during packaging.
 export RUSTFLAGS="-lpython%{pyver}"
+export CARGO_HOME=$PWD/.cargo
+# sort out crate licenses
+%cargo_license_summary
+%{cargo_license} > LICENSES.dependencies
 
 %files
+%license LICENSE LICENSES.dependencies
 %{python_sitearch}/%{module}
 %{python_sitearch}/%{module}-%{version}.dist-info
