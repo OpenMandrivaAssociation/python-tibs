@@ -3,7 +3,7 @@
 %define module tibs
 
 Name:		python-tibs
-Version:	0.6.0
+Version:	0.7.0
 Release:	1
 Summary:	A sleek Python library for binary data
 License:	MIT
@@ -41,6 +41,8 @@ EOF
 # during packaging.
 export RUSTFLAGS="-lpython%{pyver}"
 export CARGO_HOME=$PWD/.cargo
+
+%build -a
 # sort out crate licenses
 %cargo_license_summary
 %{cargo_license} > LICENSES.dependencies
