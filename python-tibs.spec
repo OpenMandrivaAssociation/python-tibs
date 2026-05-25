@@ -3,7 +3,7 @@
 %define module tibs
 
 Name:		python-tibs
-Version:	0.7.0
+Version:	0.8.0
 Release:	1
 Summary:	A sleek Python library for binary data
 License:	MIT
