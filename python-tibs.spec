@@ -4,7 +4,7 @@
 
 Name:		python-tibs
 Version:	0.9.2
-Release:	1
+Release:	2
 Summary:	A sleek Python library for binary data
 License:	MIT
 Group:		Development/Python
